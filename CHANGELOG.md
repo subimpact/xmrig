@@ -1,3 +1,6 @@
+# v6.17.0
+- [#2411](https://github.com/xmrig/xmrig/pull/2411) Added support for Yada (`rx/yada` algorithm).
+
 # v6.16.2
 - [#2751](https://github.com/xmrig/xmrig/pull/2751) Fixed crash on CPUs supporting VAES and running GCC-compiled xmrig.
 - [#2761](https://github.com/xmrig/xmrig/pull/2761) Fixed broken auto-tuning in GCC Windows build.
