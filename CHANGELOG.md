@@ -2,6 +2,12 @@
 - [#2411](https://github.com/xmrig/xmrig/pull/2411) Added support for Yada (`rx/yada` algorithm).
 
 
+# v6.16.4
+- [#2904](https://github.com/xmrig/xmrig/pull/2904) Fixed unaligned memory accesses.
+- [#2908](https://github.com/xmrig/xmrig/pull/2908) Added MSVC/2022 to `version.h`.
+- [#2910](https://github.com/xmrig/xmrig/issues/2910) Fixed donation for GhostRider/RTM.
+
+
 # v6.16.3
 - [#2778](https://github.com/xmrig/xmrig/pull/2778) Fixed `READY threads X/X` display after algorithm switching.
 - [#2782](https://github.com/xmrig/xmrig/pull/2782) Updated GhostRider documentation.
