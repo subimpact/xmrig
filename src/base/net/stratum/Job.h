@@ -77,6 +77,7 @@ public:
     inline const uint32_t *nonce() const                { return reinterpret_cast<const uint32_t*>(m_blob + nonceOffset()); }
     inline const uint8_t *blob() const                  { return m_blob; }
     inline int32_t nonceOffset() const                  { auto f = algorithm().family(); return (f == Algorithm::KAWPOW) ? 32 : ((f == Algorithm::GHOSTRIDER) ? 76 : ((m_algorithm == Algorithm::RX_YADA) ? 147 : 39)); }
+    int32_t nonceOffset() const;
     inline size_t nonceSize() const                     { return (algorithm().family() == Algorithm::KAWPOW) ?  8 :  4; }
     inline size_t size() const                          { return m_size; }
     inline uint32_t *nonce()                            { return reinterpret_cast<uint32_t*>(m_blob + nonceOffset()); }
