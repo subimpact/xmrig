@@ -112,14 +112,22 @@ bool xmrig::Job::setTarget(const char *target)
     const auto raw    = Cvt::fromHex(target, strlen(target));
     const size_t size = raw.size();
 
-    if (size == 4) {
-        m_target = 0xFFFFFFFFFFFFFFFFULL / (0xFFFFFFFFULL / uint64_t(*reinterpret_cast<const uint32_t *>(raw.data())));
+#   ifdef XMRIG_ALGO_RX_YADA
+    if (algorithm() == Algorithm::RX_YADA) {
+        m_target = strtoull(target, nullptr, 16);
     }
-    else if (size == 8) {
-        m_target = *reinterpret_cast<const uint64_t *>(raw.data());
-    }
-    else {
-        return false;
+    else
+#   endif
+    {
+        if (size == 4) {
+            m_target = 0xFFFFFFFFFFFFFFFFULL / (0xFFFFFFFFULL / uint64_t(*reinterpret_cast<const uint32_t *>(raw.data())));
+        }
+        else if (size == 8) {
+            m_target = *reinterpret_cast<const uint64_t *>(raw.data());
+        }
+        else {
+            return false;
+        }
     }
 
 #   ifdef XMRIG_PROXY_PROJECT
@@ -169,6 +177,7 @@ int32_t xmrig::Job::nonceOffset() const
    auto f = algorithm().family();
    if (f == Algorithm::KAWPOW)     return 32;
    if (f == Algorithm::GHOSTRIDER) return 76;
+   if (f == Algorithm::RX_YADA)    return 147;
 
    auto id = algorithm().id();
    if (id == Algorithm::ASTROBWT_DERO_2) return 44;

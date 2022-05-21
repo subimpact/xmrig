@@ -1,3 +1,6 @@
+# v6.18.0
+- [#2411](https://github.com/xmrig/xmrig/pull/2411) Added support for Yada (`rx/yada` algorithm).
+
 # v6.17.0
 - [#2954](https://github.com/xmrig/xmrig/pull/2954) **Dero HE fork support (`astrobwt/v2` algorithm).**
   - [#2961](https://github.com/xmrig/xmrig/pull/2961) Dero HE (`astrobwt/v2`) CUDA config generator.
@@ -10,6 +13,7 @@
 - [#2908](https://github.com/xmrig/xmrig/pull/2908) Added MSVC/2022 to `version.h`.
 - [#2910](https://github.com/xmrig/xmrig/issues/2910) Fixed donation for GhostRider/RTM.
 
+
 # v6.16.3
 - [#2778](https://github.com/xmrig/xmrig/pull/2778) Fixed `READY threads X/X` display after algorithm switching.
 - [#2782](https://github.com/xmrig/xmrig/pull/2782) Updated GhostRider documentation.
@@ -21,6 +25,7 @@
 - [#2873](https://github.com/xmrig/xmrig/pull/2873) Fixed GhostRider benchmark on single-core systems.
 - [#2882](https://github.com/xmrig/xmrig/pull/2882) Fixed ARMv7 compilation.
 - [#2893](https://github.com/xmrig/xmrig/pull/2893) KawPow OpenCL: use separate UV loop for building programs.
+
 
 # v6.16.2
 - [#2751](https://github.com/xmrig/xmrig/pull/2751) Fixed crash on CPUs supporting VAES and running GCC-compiled xmrig.
